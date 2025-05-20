@@ -14,37 +14,110 @@
     direction: rtl;
     transition: all 1s;
     font-family: yekan;
+    box-sizing: border-box;
+    padding: 0;
     margin: 0;
 }
 
 body {
+    background-color: #1E1E1E;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
-    position: relative;
-    height: 100vh;
+}
+.pageSection {
+    display: flex;
+    padding: 1rem;
+    width: 70%;
+    height: auto;
 }
 
-.pageSection {
-    background-color: rgba(181, 179, 179, 0.373);
-    width: 18rem;
-    padding: 1rem;
+.formSection {
+    width: 45%;
+    height: auto;
+    min-height: 90%;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 0.5rem;
     margin: auto 0;
+    align-items: center;
+    border: 0.01rem solid #FFFFFF;
+}
+
+.formSection h1 {
+    color: #FFFFFF;
+    padding: 0.5rem;
+}
+
+.bigImageSection {
+    background-color: #925FE2;
+    width: 55%;
+    height: auto;
+    min-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    margin: auto 0;
+    position: relative;
+}
+
+.bigImageSection .bigImage {
+    height: 60%;
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    z-index: 2;
+}
+
+.bigImageSection .efectImg1 {
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%;
+    height: 60%;
+    bottom: 0;
+}
+
+.bigImageSection .efectImg2 {
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    width: 50%;
+    top: 0;
+    left: 0;
+}
+
+.bigImageSection span {
+    z-index: 3;
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 4rem;
 }
 
 input,
 select,
 button {
     border-radius: 0.5rem;
-    border: 0.05rem solid rgb(97, 96, 96);
-    padding: 0.3rem;
+    padding: 0.2rem 0.5rem;
+    width: 70%;
 }
-
+input , select{
+    border-bottom: 0.01rem solid gray;
+    background-color: inherit;
+    color: white;
+}
+option{
+    background-color: #9C6FE4;
+    color: white;
+    font-weight: bold;
+}
 button {
-    background-color: rgba(60, 60, 253, 0.603);
+    background-color: #9C6FE4;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -54,7 +127,8 @@ button {
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
-
+    width: 100%;
+    align-items: center;
 }
 
 #modal {
@@ -95,4 +169,18 @@ button {
 
 .my-input::placeholder {
     color: red;
+}
+
+@media (max-width : 768px) {
+    .pageSection {
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bigImageSection .bigImage{
+        width: 90%;
+    }
+    .formSection , .bigImageSection {
+        width: 90%;
+    }
 }

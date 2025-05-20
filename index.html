@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
     <section class="pageSection">
-        <h1>
-            فرم ثبت اطلاعات کاربران
-        </h1>
-        <form id="form">
-            <input type="text" placeholder="نام *" id="nameInput">
-            <input type="text" placeholder=" نام خانوادگی*" id="familyInput">
-            <input type="email" placeholder="ایمیل" id="emailInput">
-            <input type="text" placeholder="شغل" id="jobInput">
-            <input type="tel" placeholder="شماره تماس *" id="numberInput">
-            <select id="gender">
-                <option value="مرد">مرد</option>
-                <option value="زن">زن</option>
-                <option value="" selected disabled>جنسیت خود را انتخاب کنید</option>
-            </select>
-            <button type="submit">
-                افزودن
-            </button>
-        </form>
-        <button id="showModal"> نمایش همه کاربران </button>
-        <button id="findEmial">پیدا کردن ایمیل </button>
-        <button id="checkAllHaveJob">آیا همه شاغل اند؟ </button>
-        <button id="checkHasMale"> آیا حداقل یک مرد هست؟ </button>
+
+        <section class="formSection">
+            <h1>
+                فرم ثبت اطلاعات کاربران
+            </h1>
+            <form id="form">
+                <input type="text" placeholder="نام *" id="nameInput">
+                <input type="text" placeholder=" نام خانوادگی*" id="familyInput">
+                <input type="email" placeholder="ایمیل" id="emailInput">
+                <input type="text" placeholder="شغل" id="jobInput">
+                <input type="tel" placeholder="شماره تماس *" id="numberInput">
+                <select id="gender">
+                    <option value="مرد">مرد</option>
+                    <option value="زن">زن</option>
+                    <option value="" selected disabled>جنسیت خود را انتخاب کنید</option>
+                </select>
+                <button type="submit">
+                    افزودن
+                </button>
+            </form>
+            <button id="showModal"> نمایش همه کاربران </button>
+            <button id="findEmial">پیدا کردن ایمیل </button>
+            <button id="checkAllHaveJob">آیا همه شاغل اند؟ </button>
+            <button id="checkHasMale"> آیا حداقل یک مرد هست؟ </button>
+        </section>
+
+        <div class="bigImageSection">
+            <span> به پرتال ثبت نام<br>خوش اومدید</span>
+            <img class="bigImage" src="/assets/image/mainImg.png" alt="">
+            <img class="efectImg1" src="/assets/image/Vector (1).png" alt="">
+            <img class="efectImg2" src="/assets/image/Vector.png" alt="">
+        </div>
 
     </section>
 
     <div id="modal"></div>
     <div id="overlay"></div>
-    
+
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
