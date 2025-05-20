@@ -62,19 +62,20 @@ showModalBtn.addEventListener("click", () => {
         modal.appendChild(list);
     }
 
-    overlay.style.opacity = "1";
-    overlay.style.visibility = "visible";
-    modal.style.opacity = "1";
-    modal.style.visibility = "visible";
+    handleShowModal();
 
 })
+
 
 // find person with email
 document.getElementById("findEmial").addEventListener("click", () => {
     const emailToFind = prompt("ایمیل مورد نظر را وارد کنید");
-    const person = pepole.find(p => p.email === emailToFind.trim());
-    if (person) {
-        const {
+    const person = pepole.filter(p => p.email === emailToFind.trim());
+    if (person.length > 0) {
+        modal.innerHTML =
+            `<h3> کاربر با مشخصات زیر یافت شد : </h3> `;
+        person.forEach((person) => {
+            const {
                 name,
                 family,
                 email,
@@ -82,25 +83,47 @@ document.getElementById("findEmial").addEventListener("click", () => {
                 phone,
                 gender
             } = person;
-        modal.innerHTML =
-        `<h3> کاربر با مشخصات زیر یافت شد : </h3>
-        <p>نام : ${name} </p>
-        <p>نام خانوادگی : ${family} </p>
-        <p>شغل : ${job} </p>
-        <p>شماره تماس : ${phone} </p>
-        <p>جنسیت : ${gender}</p>`
-    }
-    else{
+            modal.innerHTML += `
+            <hr>
+            <p>نام : ${name} </p>
+            <p>نام خانوادگی : ${family} </p>
+            <p>شغل : ${job} </p>
+            <p>شماره تماس : ${phone} </p>
+            <p>جنسیت : ${gender}</p>`;
+        })
+    } else {
         modal.innerHTML = `<h3> کاربر یافت نشد </h3>`
     }
+    handleShowModal();
+
+})
+
+//check all have Job
+document.getElementById("checkAllHaveJob").addEventListener("click", () => {
+    const haveJob = pepole.every(p => p.job.trim())
+    modal.innerHTML = haveJob ?
+        "<p>✅ همه افراد دارای شغل هستند.</p>" :
+        "<p>❌ برخی افراد شغل ثبت نکرده‌اند.</p>";
+    handleShowModal();
+
+})
+
+//check have man
+document.getElementById("checkHasMale").addEventListener("click", () => {
+    const hasMale = pepole.some(p => p.gender === "مرد")
+    modal.innerHTML = hasMale ?
+        "<p>✅  حداقل یک مرد ثبت شده است .</p>" :
+        "<p>❌ در بین افراد مردی وجود ندارد .</p>";
+    handleShowModal();
+})
+
+// function show modal
+const handleShowModal = () => {
     overlay.style.opacity = "1";
     overlay.style.visibility = "visible";
     modal.style.opacity = "1";
     modal.style.visibility = "visible";
-})
-
-
-
+}
 
 // close overlay page
 overlay.addEventListener("click", () => {
