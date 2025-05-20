@@ -1,0 +1,95 @@
+@font-face {
+    font-family: yekan;
+    src: url("/assets/font/persianFont/yekan-font/yekan-regular.woff");
+    src: url("/assets/font/persianFont/yekan-font/yekan-regular.ttf");
+}
+
+@font-face {
+    font-family: vazir;
+    src: url("/assets/font/persianFont/vazir-font-v18.0.0/Vazir-Bold.woff");
+    src: url("/assets/font/persianFont/vazir-font-v18.0.0/Vazir-Bold.woff2");
+}
+
+* {
+    direction: rtl;
+    transition: all 1s;
+    font-family: yekan;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+}
+
+.pageSection {
+    background-color: rgba(181, 179, 179, 0.373);
+    width: 18rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin: auto 0;
+}
+
+input,
+select,
+button {
+    border-radius: 0.5rem;
+    border: 0.05rem solid rgb(97, 96, 96);
+    padding: 0.3rem;
+}
+
+button {
+    background-color: rgba(60, 60, 253, 0.603);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+
+}
+
+#modal {
+    opacity: 0;
+    position: fixed;
+    visibility: hidden;
+    border-radius: 0.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 1.5rem;
+    z-index: 2;
+    min-width: 15rem;
+    max-width: 90%;
+    width: 100vw;
+}
+
+#modal ul {
+    border: 0.02rem solid rgb(59, 147, 255);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+}
+
+#overlay {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    transition: all 1s;
+}
+
+.my-input::placeholder {
+    color: red;
+}
